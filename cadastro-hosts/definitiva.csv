@@ -1,0 +1,5 @@
+host;ip;monitoramento;Grupos;templates;conexao
+HSJQ0649;172.42.41.188;agent;Teste1,Teste2;Template Basic,ICMP Ping;server
+HSJQ0650;172.42.41.189;agent;Teste1,Teste2,Teste3;Template Basic,ICMP Ping;proxy
+HSJQ0651;172.42.41.190;agent;Teste1,Teste2,Teste3;Template Basic,ICMP Ping;server
+HSJQ0652;172.42.41.191;snmp;Teste1,Teste2,Teste3;ICMP Ping;proxy
