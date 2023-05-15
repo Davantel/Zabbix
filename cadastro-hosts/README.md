@@ -1,7 +1,8 @@
-Cadastro Automatizado de Hosts no Zabbix
+# Cadastro Automatizado de Hosts no Zabbix
 
 Este é um programa desenvolvido em Python para automatizar o cadastro de hosts no Zabbix por meio da API. Com esta ferramenta, é possível realizar o cadastro em massa de equipamentos a partir de um arquivo CSV.
-Requisitos
+
+# Requisitos
 
 Antes de executar o programa, certifique-se de ter instalado os seguintes pacotes Python:
 
@@ -11,7 +12,7 @@ Antes de executar o programa, certifique-se de ter instalado os seguintes pacote
     customtkinter: Biblioteca personalizada para estilização de elementos do tkinter.
     PIL: Biblioteca para processamento de imagens.
 
-Como Utilizar
+# Como Utilizar
 
     Preencha os campos de conexão com as credenciais do Zabbix (servidor, usuário e senha).
 
@@ -42,13 +43,13 @@ Como Utilizar
 
     Ao final do processo, a mensagem "Todos os hosts foram cadastrados" será exibida em verde.
 
-Observações
+# Observações
 
     É importante garantir que os grupos e templates mencionados no arquivo CSV já estejam cadastrados no Zabbix.
     Caso um host com o mesmo identificador (ID) já exista no Zabbix, o programa irá pular o cadastro desse host e exibirá a mensagem correspondente.
     Caso seja necessário utilizar um proxy, certifique-se de que o proxy desejado esteja configurado corretamente no Zabbix e informe "Sim" na coluna "Proxy" do arquivo CSV.
 
-Autor
+# Autor
 
 Este programa foi desenvolvido por Caio Davantel
 
