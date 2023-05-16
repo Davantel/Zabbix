@@ -14,40 +14,41 @@ Antes de executar o programa, certifique-se de ter instalado os seguintes pacote
 
 # Como Utilizar
 
-    Preencha os campos de conexão com as credenciais do Zabbix (servidor, usuário e senha).
+Preencha os campos de conexão com as credenciais do Zabbix (servidor, usuário e senha).
 
-    Clique no botão "Conectar" para estabelecer uma conexão com a API do Zabbix.
+Clique no botão "Conectar" para estabelecer uma conexão com a API do Zabbix.
 
-    Se a conexão for bem-sucedida, a mensagem "Conectado na API" será exibida em verde.
+Se a conexão for bem-sucedida, a mensagem "Conectado na API" será exibida em verde.
 
-    Clique no botão "Selecionar arquivo CSV" para escolher o arquivo contendo os dados dos hosts a serem cadastrados. Certifique-se de que o arquivo CSV esteja no seguinte formato:
+Clique no botão "Selecionar arquivo CSV" para escolher o arquivo contendo os dados dos hosts a serem cadastrados. 
 
-    plaintext
+Certifique-se de que o arquivo CSV esteja no seguinte formato:
 
-    ID;Endereço IP;Tipo;Grupos;Templates;Proxy
-    1;192.168.0.1;Agent;Servidores;Template Linux;Não
-    2;192.168.0.2;SNMP;Roteadores,Switches;Template SNMP;Sim
+    Host;Endereço IP;Tipo;Grupos;Templates;Conexao;Descricao
+    Maquina2;192.168.0.1;Agent;Servidores;Template Linux;server;Maquina do datacenter
+    Maquina2;192.168.0.2;SNMP;Roteadores,Switches;Template SNMP;proxy;Maquina pessoal
 
-        ID: Identificador único do host.
-        Endereço IP: Endereço IP do host.
-        Tipo: Tipo de agente de monitoramento (Agent, SNMP, etc.).
-        Grupos: Nomes dos grupos aos quais o host será associado, separados por vírgula.
-        Templates: Nomes dos templates a serem aplicados ao host, separados por vírgula.
-        Proxy: Indica se o host utilizará um proxy (Sim/Não).
+    Host: Nome do host.
+    Endereço IP: Endereço IP do host.
+    Tipo: Tipo de agente de monitoramento (Agent, SNMP).
+    Grupos: Nomes dos grupos aos quais o host será associado, separados por vírgula.
+    Templates: Nomes dos templates a serem aplicados ao host, separados por vírgula.
+    Server: Indica se o host utilizará um proxy ou server.
+    Descrição: Descrição do host.
 
-    Após selecionar o arquivo CSV, o caminho do arquivo será exibido no campo correspondente.
+Após selecionar o arquivo CSV, o caminho do arquivo será exibido no campo correspondente.
 
-    Clique no botão "Cadastrar Hosts" para iniciar o processo de cadastro dos hosts no Zabbix.
+Clique no botão "Cadastrar Hosts" para iniciar o processo de cadastro dos hosts no Zabbix.
 
-    Durante o cadastro, o programa exibirá mensagens indicando o progresso e o status de cada host cadastrado.
+Durante o cadastro, o programa exibirá mensagens indicando o progresso e o status de cada host cadastrado.
 
-    Ao final do processo, a mensagem "Todos os hosts foram cadastrados" será exibida em verde.
+Ao final do processo, a mensagem "Todos os hosts foram cadastrados" será exibida em verde.
 
 # Observações
 
-    É importante garantir que os grupos e templates mencionados no arquivo CSV já estejam cadastrados no Zabbix.
-    Caso um host com o mesmo identificador (ID) já exista no Zabbix, o programa irá pular o cadastro desse host e exibirá a mensagem correspondente.
-    Caso seja necessário utilizar um proxy, certifique-se de que o proxy desejado esteja configurado corretamente no Zabbix e informe "Sim" na coluna "Proxy" do arquivo CSV.
+É importante garantir que os grupos e templates mencionados no arquivo CSV já estejam cadastrados no Zabbix.
+Caso um host com o mesmo NOME já exista no Zabbix, o programa irá pular o cadastro desse host e exibirá a mensagem correspondente.
+Caso seja necessário utilizar um proxy, certifique-se de que o proxy desejado esteja configurado corretamente no Zabbix e informe "proxy" na coluna "Conexao" do arquivo CSV.
 
 # Autor
 
