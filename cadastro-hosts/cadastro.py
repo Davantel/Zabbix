@@ -54,7 +54,7 @@ def cadastrar_hosts():
         arquivo = csv.reader(csvfile, delimiter=';')
         next(arquivo)
 
-        for (i, a, b, c, d, e) in arquivo:
+        for (i, a, b, c, d, e, f) in arquivo:
 
             host_label.configure(text=f"Cadastrando equipamento - {i}")
             host_label.update()
@@ -75,7 +75,8 @@ def cadastrar_hosts():
                     "useip": 1,
                     "ip": a,
                     "dns": "",
-                    "port": "10050"
+                    "port": "10050",
+                    
                 })
             elif b.lower() == "snmp":
                 interfaces.append({
@@ -110,6 +111,7 @@ def cadastrar_hosts():
                 "interfaces": interfaces,
                 "groups": groups,
                 "templates": templates,
+                "description": f,
                 "proxy_hostid": proxy_id if e.lower() == "proxy" else "0"
             })
 
@@ -139,22 +141,22 @@ frame = tkc.CTkFrame(app, width=380, height=250, border_width=1, border_color='#
 frame.place(x=10, y=100)
 
 # Credenciais de conexão
-tkc.CTkLabel(frame, text="Conexão", font=('Ivy', 15, 'bold'), height=10).place(x=170, y=10)
-tkc.CTkLabel(frame, text="Servidor", font=('Ivy', 12, 'bold')).place(x=70, y=40)
-tkc.CTkLabel(frame, text="Usuário", font=('Ivy', 12, 'bold')).place(x=70, y=80)
-tkc.CTkLabel(frame, text="Senha", font=('Ivy', 12, 'bold')).place(x=70, y=120)
+tkc.CTkLabel(frame, text="Conexão na API", font=('Ivy', 15, 'bold'), height=10).place(x=130, y=10)
+tkc.CTkLabel(frame, text="Servidor", font=('Ivy', 12, 'bold')).place(x=60, y=40)
+tkc.CTkLabel(frame, text="Usuário", font=('Ivy', 12, 'bold')).place(x=60, y=80)
+tkc.CTkLabel(frame, text="Senha", font=('Ivy', 12, 'bold')).place(x=60, y=120)
 
 host_entry = tkc.CTkEntry(frame, font=('Ivy', 12, 'bold'), corner_radius=13)
 user_entry = tkc.CTkEntry(frame, font=('Ivy', 12, 'bold'), corner_radius=13)
 password_entry = tkc.CTkEntry(frame, show="*", corner_radius=13)
 
-host_entry.place(x=130, y=40)
-user_entry.place(x=130, y=80)
-password_entry.place(x=130, y=120)
+host_entry.place(x=120, y=40)
+user_entry.place(x=120, y=80)
+password_entry.place(x=120, y=120)
 
 # Botão de conexão
 connect_button = tkc.CTkButton(frame, text="Conectar", command=connect_zabbix, font=('Ivy', 15, 'bold'), corner_radius=13, fg_color='#d81424', hover_color='#ec1c2c')
-connect_button.place(x=130, y=170)
+connect_button.place(x=120, y=170)
 
 status_label = tkc.CTkLabel(frame, text="", font=('Ivy', 15, 'bold'), width=330, height=30, fg_color=('black', '#323232'), corner_radius=8)
 status_label.place(x=25, y=210)
@@ -164,17 +166,17 @@ frame2 = tkc.CTkFrame(app, width=380, height=260, border_width=1, border_color='
 frame2.place(x=10, y=355)
 
 # Selecionar arquivo CSV
-tkc.CTkLabel(frame2, text="Cadastro", font=('Ivy', 15, 'bold'), height=10).place(x=170, y=10)
+tkc.CTkLabel(frame2, text="Cadastro", font=('Ivy', 15, 'bold'), height=10).place(x=160, y=10)
 
 select_csv_button = tkc.CTkButton(frame2, text="Selecionar arquivo CSV", command=select_csv_file, font=('Ivy', 15, 'bold'), corner_radius=13, fg_color='#d81424', state="disabled", hover_color='#ec1c2c')
-select_csv_button.place(x=105, y=50)
+select_csv_button.place(x=95, y=50)
 
 csv_path_entry = tkc.CTkEntry(frame2, corner_radius=13, font=('Ivy', 12, 'bold'), width=197, state="disabled")
-csv_path_entry.place(x=105, y=90)
+csv_path_entry.place(x=95, y=90)
 
 # Botão de cadastro
 cadastrar_button = tkc.CTkButton(frame2, text="Cadastrar Hosts", command=cadastrar_hosts, font=('Ivy', 15, 'bold'), corner_radius=13, fg_color='#d81424', state="disabled", hover_color='#ec1c2c')
-cadastrar_button.place(x=130, y=140)
+cadastrar_button.place(x=120, y=140)
 
 # Progresso do cadastro
 host_label = tkc.CTkLabel(frame2, text="", font=('Ivy', 15, 'bold'), width=330, height=30, fg_color=('black', '#323232'), corner_radius=8)
